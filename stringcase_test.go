@@ -17,7 +17,7 @@ func equal(a, b []string) bool {
 func TestParse(t *testing.T) {
 	const s, c = "hello-there-dash", Dash
 	out := []string{"hello", "there", "dash"}
-	if x := Parse(s, c); equal(x, out) {
-		t.Errorf("Parse(%v, %v) = %v, want %v", s, c, x, out)
+	if x := Parse(s, c); !equal(x, out) {
+		t.Errorf("Parse(%#v, %#v) = %#v, want %#v", s, c, x, out)
 	}
 }
